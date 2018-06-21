@@ -1,0 +1,14 @@
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Release\Domain.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Release\Domain.pdb
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Release\EntityFramework.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Release\System.Data.SqlClient.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Release\EntityFramework.xml
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.csprojAssemblyReference.cache
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.ajustes_db1.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.csproj.GenerateResource.cache
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.csproj.CoreCompileInputs.cache
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.csproj.CopyComplete
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.pdb

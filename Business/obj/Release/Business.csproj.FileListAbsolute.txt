@@ -1,0 +1,14 @@
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\Business.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\Business.pdb
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\Domain.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\EntityFramework.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\System.Data.SqlClient.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\Domain.pdb
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\EntityFramework.xml
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\obj\Release\Business.csprojAssemblyReference.cache
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\obj\Release\Business.csproj.CoreCompileInputs.cache
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\obj\Release\Business.csproj.CopyComplete
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\obj\Release\Business.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Business\obj\Release\Business.pdb
