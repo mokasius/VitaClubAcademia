@@ -60,6 +60,21 @@ namespace VitaClubAcademia.Services
             }
         }
 
+        public Stream CarregarAlunos()
+        {
+            try
+            {
+                var alunos = Aluno.CarregarAlunos();
+
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<Aluno>));
+                return ConverteObjetoParaStream(ser, alunos);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
 
 
 
@@ -73,6 +88,5 @@ namespace VitaClubAcademia.Services
 
             return sr.BaseStream;
         }
-
     }
 }

@@ -106,20 +106,52 @@ namespace Business.Classes
             {
                 using (var db = new VitaClubContext())
                 {
-                    var aluno = db.Alunos.SingleOrDefault(a => a.Id == id);
+                    var alunoDO = db.Alunos.SingleOrDefault(a => a.Id == id);
 
-                    if (aluno != null)
-                        return new Aluno(aluno);
+                    if (alunoDO != null)
+                    {
+                        var aluno = new Aluno(alunoDO);
 
-                    return new Aluno();
+                        return aluno;
+                        //return new Aluno(alunoDO);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 var msg = ex.Message;
+                return null;
             }
 
             return new Aluno();
+        }
+
+        public static List<Aluno> CarregarAlunos()
+        {
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var retorno = new List<Aluno>();
+                    var alunos = db.Alunos.ToList();
+
+                    foreach (var aluno in alunos)
+                    {
+                        var a = new Aluno(aluno);
+                        a.Treinos.Count();
+                        //a.Treinos.Clear();  //limpa os treinos para nao ficar pesado na hora de passar pro mobile
+                        //retorno.Add(new Aluno(aluno));
+                        retorno.Add(a);
+                    }
+
+                    return retorno;
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+                return null;
+            }
         }
 
         public static void Teste()

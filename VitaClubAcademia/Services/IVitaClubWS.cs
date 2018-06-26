@@ -25,6 +25,9 @@ namespace VitaClubAcademia.Services
         [WebInvoke(Method = "GET", UriTemplate = "CarregarAluno/{codigo}", ResponseFormat = WebMessageFormat.Json)]
         Stream CarregarAluno(string codigo);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "CarregarAlunos", ResponseFormat = WebMessageFormat.Json)]
+        Stream CarregarAlunos();
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SalvarAluno", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
