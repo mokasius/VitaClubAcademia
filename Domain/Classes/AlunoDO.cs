@@ -16,6 +16,7 @@ namespace Domain.Classes
         public double ? Altura { get; set; }
         public string Email { get; set; }
         public int ? Status { get; set; }
+        public int ? DiaVencimento { get; set; }
 
         public virtual ICollection<TreinoDO> Treinos { get; set; }
         //public virtual ICollection<FrequenciaDO> Frequencias { get; set; }

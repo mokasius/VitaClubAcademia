@@ -100,6 +100,28 @@ namespace Business.Classes
             return true;
         }
 
+        public static Aluno CarregarAluno(int id)
+        {
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var aluno = db.Alunos.SingleOrDefault(a => a.Id == id);
+
+                    if (aluno != null)
+                        return new Aluno(aluno);
+
+                    return new Aluno();
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
+            return new Aluno();
+        }
+
         public static void Teste()
         {
             var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;

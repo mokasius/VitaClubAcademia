@@ -35,7 +35,7 @@ namespace Business.Classes
             get { return alunoDO.DataNascimento; }
             set { this.alunoDO.DataNascimento = value; }
         }
-
+        
         public virtual int? Idade
         {
             get { return alunoDO.Idade; }
@@ -76,6 +76,12 @@ namespace Business.Classes
         {
             get { return alunoDO.Status; }
             set { this.alunoDO.Status = value; }
+        }
+
+        public virtual int? DiaVencimento
+        {
+            get { return alunoDO.DiaVencimento; }
+            set { this.alunoDO.DiaVencimento = value; }
         }
 
         #endregion

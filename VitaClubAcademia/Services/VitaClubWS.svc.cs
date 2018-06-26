@@ -1,8 +1,10 @@
 ﻿using Business.Classes;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 using System.ServiceModel;
 using System.Text;
 using System.Web.Script.Serialization;
@@ -39,6 +41,38 @@ namespace VitaClubAcademia.Services
             
         }
 
+        public Stream CarregarAluno(string codigo)
+        {
+            try
+            {
+                int id = int.Parse(codigo);
+
+                var aluno = Aluno.CarregarAluno(id);
+                //var json = new JavaScriptSerializer().Serialize(aluno);
+                //return json;
+
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Aluno));
+                return ConverteObjetoParaStream(ser, aluno);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
+
+
+        private Stream ConverteObjetoParaStream(DataContractJsonSerializer serializer, object retorno)
+        {
+            MemoryStream stream1 = new MemoryStream();
+            serializer.WriteObject(stream1, retorno);
+            stream1.Position = 0;
+            StreamReader sr = new StreamReader(stream1);
+
+            return sr.BaseStream;
+        }
 
     }
 }

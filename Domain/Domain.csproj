@@ -60,6 +60,10 @@
     <Compile Include="Migrations\201806090033221_ajustes_db1.Designer.cs">
       <DependentUpon>201806090033221_ajustes_db1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806262213473_diavencimentoaluno.cs" />
+    <Compile Include="Migrations\201806262213473_diavencimentoaluno.Designer.cs">
+      <DependentUpon>201806262213473_diavencimentoaluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="VitaClubContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806090033221_ajustes_db1.resx">
       <DependentUpon>201806090033221_ajustes_db1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806262213473_diavencimentoaluno.resx">
+      <DependentUpon>201806262213473_diavencimentoaluno.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
