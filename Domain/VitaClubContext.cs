@@ -18,6 +18,7 @@ public class VitaClubContext : DbContext
     public DbSet<DivisaoTreinoDO> DivisoesTreino { get; set; }
     public DbSet<ExercicioDO> Exercicios { get; set; }
     public DbSet<FrequenciaDO> Frequencias { get; set; }
+    public DbSet<ExercicioTreinoDO> ExerciciosTreino { get; set; }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
@@ -30,6 +31,7 @@ public class VitaClubContext : DbContext
         MontaClasseDivisaoTreino(modelBuilder);
         MontaClasseExercicio(modelBuilder);
         MontaClasseFrequencia(modelBuilder);
+        MontaClasseExercicioTreino(modelBuilder);
 
         base.OnModelCreating(modelBuilder);
     }
@@ -81,6 +83,16 @@ public class VitaClubContext : DbContext
         modelBuilder.Entity<ExercicioDO>().ToTable("Exercicio");
         modelBuilder.Entity<ExercicioDO>().HasKey(c => c.Id);
         modelBuilder.Entity<ExercicioDO>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+        //modelBuilder.Entity<ExercicioDO>().HasRequired(c => c.DivisaoTreino)
+        //     .WithMany(p => p.Exercicios).HasForeignKey(p => p.DivisaoTreinoId);
+    }
+
+    private void MontaClasseExercicioTreino(DbModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<ExercicioTreinoDO>().ToTable("ExercicioTreino");
+        modelBuilder.Entity<ExercicioTreinoDO>().HasKey(c => new { c.Treino, c.Sequencia });
+        //modelBuilder.Entity<ExercicioTreinoDO>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
         //modelBuilder.Entity<ExercicioDO>().HasRequired(c => c.DivisaoTreino)
         //     .WithMany(p => p.Exercicios).HasForeignKey(p => p.DivisaoTreinoId);

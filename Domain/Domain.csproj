@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Classes\AlunoDO.cs" />
     <Compile Include="Classes\DivisaoTreinoDO.cs" />
+    <Compile Include="Classes\ExercicioTreinoDO.cs" />
     <Compile Include="Classes\ExercicioDO.cs" />
     <Compile Include="Classes\FrequenciaDO.cs" />
     <Compile Include="Classes\TreinoDO.cs" />
@@ -63,6 +64,10 @@
     <Compile Include="Migrations\201806262213473_diavencimentoaluno.cs" />
     <Compile Include="Migrations\201806262213473_diavencimentoaluno.Designer.cs">
       <DependentUpon>201806262213473_diavencimentoaluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807042244068_exercicioTreino.cs" />
+    <Compile Include="Migrations\201807042244068_exercicioTreino.Designer.cs">
+      <DependentUpon>201807042244068_exercicioTreino.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="VitaClubContext.cs" />
@@ -80,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806262213473_diavencimentoaluno.resx">
       <DependentUpon>201806262213473_diavencimentoaluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807042244068_exercicioTreino.resx">
+      <DependentUpon>201807042244068_exercicioTreino.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

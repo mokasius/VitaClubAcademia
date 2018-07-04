@@ -13,3 +13,4 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csprojA
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.ajustes_db1.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csproj.GenerateResource.cache
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.diavencimentoaluno.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.exercicioTreino.resources

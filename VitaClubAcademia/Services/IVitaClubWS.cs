@@ -20,6 +20,7 @@ namespace VitaClubAcademia.Services
         [WebInvoke(Method = "GET", UriTemplate = "Welcome/{name}", ResponseFormat = WebMessageFormat.Json)]
         string Welcome(string name);
 
+        #region Metodos Aluno
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "CarregarAluno/{codigo}", ResponseFormat = WebMessageFormat.Json)]
@@ -32,6 +33,20 @@ namespace VitaClubAcademia.Services
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SalvarAluno", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         void SalvarAluno(string json);
+
+        #endregion
+
+        #region Metodos Exercicio
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "SalvarExercicio", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        void SalvarExercicio(string json);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "CarregarExercicio/{codigo}", ResponseFormat = WebMessageFormat.Json)]
+        Stream CarregarExercicio(string codigo);
+
+        #endregion
 
     }
 }

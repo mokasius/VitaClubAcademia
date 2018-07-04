@@ -30,6 +30,13 @@ namespace Business.Classes
             set { this.exercicioDO.Descricao = value; }
         }
 
+        public virtual int? GrupoMuscular
+        {
+            get { return exercicioDO.GrupoMuscular; }
+            set { this.exercicioDO.GrupoMuscular = value; }
+        }
+
+        /*
         public virtual int? Serie
         {
             get { return exercicioDO.Serie; }
@@ -51,17 +58,13 @@ namespace Business.Classes
         {
             get { return exercicioDO.Carga; }
             set { this.exercicioDO.Carga = value; }
-        }
-        public virtual int? GrupoMuscular
-        {
-            get { return exercicioDO.GrupoMuscular; }
-            set { this.exercicioDO.GrupoMuscular = value; }
-        }
+        }        
         public virtual int? DivisaoTreinoId
         {
             get { return exercicioDO.DivisaoTreinoId; }
             set { this.exercicioDO.DivisaoTreinoId = value; }
         }
+        */
 
         #endregion
 

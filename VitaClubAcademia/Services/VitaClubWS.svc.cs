@@ -24,6 +24,7 @@ namespace VitaClubAcademia.Services
             return "Welcome " + name;
         }
 
+        #region Metodos Aluno
 
         public void SalvarAluno(string json)
         {
@@ -75,9 +76,45 @@ namespace VitaClubAcademia.Services
             }
         }
 
+        #endregion
 
 
+        #region Metodos Exercicio
 
+        public void SalvarExercicio(string json)
+        {
+            var exercicio = new JavaScriptSerializer().Deserialize<Exercicio>(json);
+
+            try
+            {
+                exercicio.Save();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public Stream CarregarExercicio(string codigo)
+        {
+            try
+            {
+                int id = int.Parse(codigo);
+
+                var exercicio = new Exercicio();
+                exercicio.Carregar(id);
+                
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Exercicio));
+                return ConverteObjetoParaStream(ser, exercicio);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        #endregion
 
         private Stream ConverteObjetoParaStream(DataContractJsonSerializer serializer, object retorno)
         {

@@ -53,10 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Base\DivisaoTreinoBase.cs" />
+    <Compile Include="Classes\Base\ExercicioTreinoBase.cs" />
     <Compile Include="Classes\Base\TreinoBase.cs" />
     <Compile Include="Classes\Base\FrequenciaBase.cs" />
     <Compile Include="Classes\Base\ExercicioBase.cs" />
     <Compile Include="Classes\Base\AlunoBase.cs" />
+    <Compile Include="Classes\ExercicioTreino.cs" />
     <Compile Include="Classes\Exercicio.cs" />
     <Compile Include="Classes\DivisaoTreino.cs" />
     <Compile Include="Classes\Frequencia.cs" />
