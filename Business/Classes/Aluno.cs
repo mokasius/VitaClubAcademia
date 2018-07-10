@@ -2,6 +2,7 @@
 using Domain.Classes;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 
 namespace Business.Classes
 {
@@ -84,8 +85,7 @@ namespace Business.Classes
             {
                 using (var db = new VitaClubContext())
                 {
-                    db.Alunos.Add(this.AlunoDO);
-
+                    db.Alunos.AddOrUpdate(this.AlunoDO);
                     this.SaveTreinos(db);
 
                     db.SaveChanges();

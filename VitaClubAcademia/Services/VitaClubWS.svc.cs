@@ -32,7 +32,7 @@ namespace VitaClubAcademia.Services
 
             try
             {
-                aluno.ValidaAluno();
+                //aluno.ValidaAluno();
                 aluno.Save();
             }
             catch (Exception ex)
