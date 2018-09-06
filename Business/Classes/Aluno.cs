@@ -3,6 +3,7 @@ using Domain.Classes;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using static Business.Enumeradores;
 
 namespace Business.Classes
 {
@@ -18,7 +19,7 @@ namespace Business.Classes
 
         public Aluno(int id) : base(id)
         {
-            
+
         }
 
         public Aluno(AlunoDO aluno) : base(aluno)
@@ -27,6 +28,18 @@ namespace Business.Classes
         }
 
         #endregion
+
+        //public new enumDiaSemana DiasSemana
+        //{
+        //    get
+        //    {
+
+        //    }
+        //    set
+        //    {
+
+        //    }
+        //}
 
         private List<Treino> treinos = null;
         public List<Treino> Treinos

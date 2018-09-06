@@ -42,16 +42,16 @@ namespace Business.Classes
             set { this.alunoDO.Idade = value; }
         }
 
-        public virtual string Profissao
-        {
-            get { return alunoDO.Profissao; }
-            set { this.alunoDO.Profissao = value; }
-        }
-
         public virtual int? FrequenciaSemanal
         {
             get { return alunoDO.FrequenciaSemanal; }
             set { this.alunoDO.FrequenciaSemanal = value; }
+        }
+
+        public virtual string Profissao
+        {
+            get { return alunoDO.Profissao; }
+            set { this.alunoDO.Profissao = value; }
         }
 
         public virtual double? Peso
@@ -78,12 +78,66 @@ namespace Business.Classes
             set { this.alunoDO.Status = value; }
         }
 
+        public virtual string Telefone
+        {
+            get { return alunoDO.Telefone; }
+            set { this.alunoDO.Telefone = value; }
+        }
+
+        public virtual string Objetivo
+        {
+            get { return alunoDO.Objetivo; }
+            set { this.alunoDO.Objetivo = value; }
+        }
+
         public virtual int? DiaVencimento
         {
             get { return alunoDO.DiaVencimento; }
             set { this.alunoDO.DiaVencimento = value; }
         }
 
+        public virtual int? Sexo
+        {
+            get { return alunoDO.Sexo; }
+            set { this.alunoDO.Sexo = value; }
+        }
+
+        public virtual int? Turno
+        {
+            get { return alunoDO.Turno; }
+            set { this.alunoDO.Turno = value; }
+        }
+
+        public virtual string DiasSemana
+        {
+            get { return alunoDO.DiasSemana; }
+            set { this.alunoDO.DiasSemana = value; }
+        }
+
+        public virtual int? Tipo
+        {
+            get { return alunoDO.Tipo; }
+            set { this.alunoDO.Tipo = value; }
+        }
+
+        public virtual string Observacao
+        {
+            get { return alunoDO.Observacao; }
+            set { this.alunoDO.Observacao = value; }
+        }
+
+        public virtual string PlanoSaude
+        {
+            get { return alunoDO.PlanoSaude; }
+            set { this.alunoDO.PlanoSaude = value; }
+        }
+
+        public virtual string TipoSanguineo
+        {
+            get { return alunoDO.TipoSanguineo; }
+            set { this.alunoDO.TipoSanguineo = value; }
+        }
+        
         #endregion
 
         #region Construtores

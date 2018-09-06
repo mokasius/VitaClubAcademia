@@ -14,3 +14,4 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrati
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csproj.GenerateResource.cache
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.diavencimentoaluno.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.exercicioTreino.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.NovosCamposAluno.resources

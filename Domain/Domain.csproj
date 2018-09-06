@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201807042244068_exercicioTreino.Designer.cs">
       <DependentUpon>201807042244068_exercicioTreino.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808222234293_NovosCamposAluno.cs" />
+    <Compile Include="Migrations\201808222234293_NovosCamposAluno.Designer.cs">
+      <DependentUpon>201808222234293_NovosCamposAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="VitaClubContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807042244068_exercicioTreino.resx">
       <DependentUpon>201807042244068_exercicioTreino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808222234293_NovosCamposAluno.resx">
+      <DependentUpon>201808222234293_NovosCamposAluno.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
