@@ -52,15 +52,15 @@ public class VitaClubContext : DbContext
         modelBuilder.Entity<TreinoDO>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
         //A chave estrangeira para a tabela Aluno
-        modelBuilder.Entity<TreinoDO>().HasRequired(c => c.Aluno)
-             .WithMany(p => p.Treinos).HasForeignKey(p => p.AlunoId);
+        //modelBuilder.Entity<TreinoDO>().HasRequired(c => c.Aluno)
+        //     .WithMany(p => p.Treinos).HasForeignKey(p => p.AlunoId);
 
         // A deleção em cascata a partir de Aluno para Treinos
-        modelBuilder.Entity<TreinoDO>()
-            .HasOptional(c => c.Aluno)
-            .WithMany()
-            .HasForeignKey(p => p.AlunoId)
-            .WillCascadeOnDelete(false);
+        //modelBuilder.Entity<TreinoDO>()
+        //    .HasOptional(c => c.Aluno)
+        //    .WithMany()
+        //    .HasForeignKey(p => p.AlunoId)
+        //    .WillCascadeOnDelete(false);
     }
 
     private void MontaClasseDivisaoTreino(DbModelBuilder modelBuilder)
@@ -68,14 +68,14 @@ public class VitaClubContext : DbContext
         modelBuilder.Entity<DivisaoTreinoDO>().ToTable("DivisaoTreino");
         modelBuilder.Entity<DivisaoTreinoDO>().HasKey(c => c.Id);
 
-        modelBuilder.Entity<DivisaoTreinoDO>().HasRequired(c => c.Treino)
-             .WithMany(p => p.DivisoesTreino).HasForeignKey(p => p.TreinoId);
+        //modelBuilder.Entity<DivisaoTreinoDO>().HasRequired(c => c.Treino)
+        //     .WithMany(p => p.DivisoesTreino).HasForeignKey(p => p.TreinoId);
 
-        modelBuilder.Entity<DivisaoTreinoDO>()
-            .HasOptional(c => c.Treino)
-            .WithMany()
-            .HasForeignKey(a => a.TreinoId)
-            .WillCascadeOnDelete(false);
+        //modelBuilder.Entity<DivisaoTreinoDO>()
+        //    .HasOptional(c => c.Treino)
+        //    .WithMany()
+        //    .HasForeignKey(a => a.TreinoId)
+        //    .WillCascadeOnDelete(false);
     }
 
     private void MontaClasseExercicio(DbModelBuilder modelBuilder)
@@ -91,7 +91,7 @@ public class VitaClubContext : DbContext
     private void MontaClasseExercicioTreino(DbModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ExercicioTreinoDO>().ToTable("ExercicioTreino");
-        modelBuilder.Entity<ExercicioTreinoDO>().HasKey(c => new { c.Treino, c.Sequencia });
+        modelBuilder.Entity<ExercicioTreinoDO>().HasKey(c => new { c.DivisaoId, c.DivisaoSeq, c.Sequencia });
         //modelBuilder.Entity<ExercicioTreinoDO>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
         //modelBuilder.Entity<ExercicioDO>().HasRequired(c => c.DivisaoTreino)

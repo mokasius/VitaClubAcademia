@@ -36,36 +36,6 @@ namespace Business.Classes
             set { this.exercicioDO.GrupoMuscular = value; }
         }
 
-        /*
-        public virtual int? Serie
-        {
-            get { return exercicioDO.Serie; }
-            set { this.exercicioDO.Serie = value; }
-        }
-
-        public virtual int? Repeticoes
-        {
-            get { return exercicioDO.Repeticoes; }
-            set { this.exercicioDO.Repeticoes = value; }
-        }
-
-        public virtual int? Descanso
-        {
-            get { return exercicioDO.Descanso; }
-            set { this.exercicioDO.Descanso = value; }
-        }
-        public virtual int? Carga
-        {
-            get { return exercicioDO.Carga; }
-            set { this.exercicioDO.Carga = value; }
-        }        
-        public virtual int? DivisaoTreinoId
-        {
-            get { return exercicioDO.DivisaoTreinoId; }
-            set { this.exercicioDO.DivisaoTreinoId = value; }
-        }
-        */
-
         #endregion
 
         #region Construtores

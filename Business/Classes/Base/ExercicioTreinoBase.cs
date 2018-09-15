@@ -18,10 +18,15 @@ namespace Business.Classes
             set { this.exercicioTreinoDO = value; }
         }
 
-        public virtual int Treino
+        public virtual int DivisaoId
         {
-            get { return exercicioTreinoDO.Treino; }
-            set { this.exercicioTreinoDO.Treino = value; }
+            get { return exercicioTreinoDO.DivisaoId; }
+            set { this.exercicioTreinoDO.DivisaoId = value; }
+        }
+        public virtual int DivisaoSeq
+        {
+            get { return exercicioTreinoDO.DivisaoSeq; }
+            set { this.exercicioTreinoDO.DivisaoSeq = value; }
         }
 
         public virtual int Sequencia
@@ -67,11 +72,11 @@ namespace Business.Classes
             exercicioTreinoDO = new ExercicioTreinoDO();
         }
 
-        public ExercicioTreinoBase(int treino, int sequencia)
+        public ExercicioTreinoBase(int divisaoId, int divisaoSeq, int sequencia)
         {
             using (var db = new VitaClubContext())
             {
-                exercicioTreinoDO = db.ExerciciosTreino.SingleOrDefault(a => a.Treino == treino && a.Sequencia == sequencia);
+                exercicioTreinoDO = db.ExerciciosTreino.SingleOrDefault(a => a.DivisaoId == divisaoId && a.DivisaoSeq == divisaoSeq && a.Sequencia == sequencia);
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using Business.Classes;
+using Business.WebServiceModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace VitaClubAcademia.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select VitaClubWS.svc or VitaClubWS.svc.cs at the Solution Explorer and start debugging.
     public class VitaClubWS : IVitaClubWS
     {
+        public VitaClubWS()
+        {
+            Business.EFManager.LoadDLL();
+        }
+
         public void DoWork()
         {
         }
@@ -112,6 +118,41 @@ namespace VitaClubAcademia.Services
             {
                 return null;
             }
+        }
+
+        public Stream CarregarExercicios()
+        {
+            try
+            {
+                var listaExercicios = Exercicio.CarregarTodosExercicios();
+
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<Exercicio>));
+                return ConverteObjetoParaStream(ser, listaExercicios);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region Metodos Treino
+
+        public void SalvarTreino(string json)
+        {
+            try
+            {
+                var treinoModel = new JavaScriptSerializer().Deserialize<TreinoModel>(json);
+
+                var treino = treinoModel.ConvertToDTO();
+                treino.Save();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         #endregion

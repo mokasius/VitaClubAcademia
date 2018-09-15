@@ -15,3 +15,6 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.pdb
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.diavencimentoaluno.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.exercicioTreino.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.NovosCamposAluno.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.prop_alunos1.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.update1.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.DivisaoSeq.resources

@@ -10,8 +10,9 @@ namespace Domain.Classes
         public int ? TreinoId { get; set; }
         public int ? Sequencia { get; set; }
         public string Descricao { get; set; }
+        public string Nome { get; set; }
 
-        public virtual TreinoDO Treino { get; set; }
+        //public virtual TreinoDO Treino { get; set; }
         //public virtual ICollection<ExercicioDO> Exercicios { get; set; }
     }
 

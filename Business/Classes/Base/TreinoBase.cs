@@ -44,10 +44,15 @@ namespace Business.Classes
             get { return treinoDO.Status; }
             set { this.treinoDO.Status = value; }
         }
-        public int ? AlunoId
+        //public int ? AlunoId
+        //{
+        //    get { return treinoDO.AlunoId; }
+        //    set { this.treinoDO.AlunoId = value; }
+        //}
+        public string Observacao
         {
-            get { return treinoDO.AlunoId; }
-            set { this.treinoDO.AlunoId = value; }
+            get { return treinoDO.Observacao; }
+            set { this.treinoDO.Observacao = value; }
         }
 
         public Aluno Aluno { get; set; }

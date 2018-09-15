@@ -4,50 +4,62 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Business
 {
-    //public static class EnumExtensions
-    //{
-    //    public static string GetDescription(this T enumerationValue) where T : struct
-    //    {
-    //        var type = enumerationValue.GetType();
-    //        if (!type.IsEnum)
-    //        {
-    //            throw new ArgumentException($"{nameof(enumerationValue)} must be of Enum type", nameof(enumerationValue));
-    //        }
-    //        var memberInfo = type.GetMember(enumerationValue.ToString());
-    //        if (memberInfo.Length > 0)
-    //        {
-    //            var attrs = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
-
-    //            if (attrs.Length > 0)
-    //            {
-    //                return ((DescriptionAttribute)attrs[0]).Description;
-    //            }
-    //        }
-    //        return enumerationValue.ToString();
-    //    }
-    //}
-
-    public class Enumeradores
+    [DataContract]
+    public enum enumDiaSemana
     {
-        public enum DiaSemana
+        [EnumMember]
+        Domingo = 1,
+        [EnumMember]
+        Segunda = 2,
+        [EnumMember]
+        Terca = 3,
+        [EnumMember]
+        Quarta = 4,
+        [EnumMember]
+        Quinta = 5,
+        [EnumMember]
+        Sexta = 6,
+        [EnumMember]
+        Sabado = 7
+    }
+
+    [DataContract]
+    public enum enumTipoAluno
+    {
+        [EnumMember]
+        Academia = 0,
+        [EnumMember]
+        Hidro = 1,
+        [EnumMember]
+        Ambos = 2
+    }
+
+    public static partial class EnumsExtentions
+    {
+        public static string Descricao(this enumDiaSemana value)
         {
-            [Description("Domingo")]
-            Domingo = 1,
-            [Description("Segunda-feira")]
-            Segunda = 2,
-            [Description("Terça-feira")]
-            Terca = 3,
-            [Description("Quarta-feira")]
-            Quarta = 4,
-            [Description("Quinta-feira")]
-            Quinta = 5,
-            [Description("Sexta-feira")]
-            Sexta = 6,
-            [Description("Sábado")]
-            Sabado = 7
+            switch (value)
+            {
+                case enumDiaSemana.Domingo:
+                    return "Domingo";
+                case enumDiaSemana.Segunda:
+                    return "Segunda-feira";
+                case enumDiaSemana.Terca:
+                    return "Terça-feira";
+                case enumDiaSemana.Quarta:
+                    return "Quarta-feira";
+                case enumDiaSemana.Quinta:
+                    return "Quinta-feira";
+                case enumDiaSemana.Sexta:
+                    return "Sexta-feira";
+                case enumDiaSemana.Sabado:
+                    return "Sábado";
+                default: return string.Empty;
+            }
         }
     }
 }

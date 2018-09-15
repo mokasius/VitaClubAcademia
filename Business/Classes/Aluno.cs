@@ -3,7 +3,6 @@ using Domain.Classes;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using static Business.Enumeradores;
 
 namespace Business.Classes
 {
@@ -29,17 +28,19 @@ namespace Business.Classes
 
         #endregion
 
-        //public new enumDiaSemana DiasSemana
-        //{
-        //    get
-        //    {
-
-        //    }
-        //    set
-        //    {
-
-        //    }
-        //}
+        /*
+        public new enumTipoAluno EnumTipo
+        {
+            get
+            {
+                return (enumTipoAluno)base.Tipo;
+            }
+            set
+            {
+                base.Tipo = (int)value;
+            }
+        }
+        */
 
         private List<Treino> treinos = null;
         public List<Treino> Treinos
@@ -52,8 +53,9 @@ namespace Business.Classes
 
                     using (var db = new VitaClubContext())
                     {
-                        var _treinos = db.Treinos.Where(a => a.AlunoId == this.Id);
+                        //var _treinos = db.Treinos.Where(a => a.AlunoId == this.Id);
 
+                        var _treinos = db.Treinos.ToList();
                         foreach (var item in _treinos)
                         {
                             treinos.Add(new Treino(item));
@@ -67,10 +69,10 @@ namespace Business.Classes
         private void SaveTreinos(VitaClubContext db)
         {
             // remove os treinos
-            db.Treinos.RemoveRange(db.Treinos.Where(a => a.AlunoId == this.Id));
+            //db.Treinos.RemoveRange(db.Treinos.Where(a => a.AlunoId == this.Id));
 
             // adiciona os DO's no treino para salvar
-            db.Treinos.AddRange(this.Treinos.Select(a => a.TreinoDO));
+            //db.Treinos.AddRange(this.Treinos.Select(a => a.TreinoDO));
         }
 
         public void ValidaAluno()
@@ -166,34 +168,6 @@ namespace Business.Classes
                 return null;
             }
         }
-
-        public static void Teste()
-        {
-            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-
-            using (var db = new VitaClubContext())
-            {
-
-                var aluno = new Aluno();
-                aluno.Id = 1;
-                aluno.Nome = "aluno 1";
-                //var aluno2 = new Aluno(aluno.AlunoDO);
-
-                //var x = aluno.Nome;
-
-
-                var treino2 = new Treino();
-                treino2.Id = 3;
-                treino2.AlunoId = 1;
-                treino2.Descricao = "desc 3";
-
-                aluno.Treinos.Add(treino2);
-
-                aluno.Save();
-                
-            }
-        }
-
 
     }
 }

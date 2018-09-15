@@ -62,8 +62,6 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\Domain.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\EntityFramework.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\Domain.pdb
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\EntityFramework.xml
-C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\EntityFramework.SqlServer.dll
-C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\EntityFramework.SqlServer.xml
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\Newtonsoft.Json.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\Newtonsoft.Json.xml
 C:\Users\thomas\Desktop\VitaClubAcademia-master\VitaClubAcademia\bin\VitaClubAcademia.dll.config
@@ -200,3 +198,6 @@ C:\Users\thoma\Desktop\VitaClubAcademia-master\VitaClubAcademia\obj\Debug\VitaCl
 C:\Users\thoma\Desktop\VitaClubAcademia-master\VitaClubAcademia\obj\Debug\VitaClubAcademia.csproj.CopyComplete
 C:\Users\thoma\Desktop\VitaClubAcademia-master\VitaClubAcademia\obj\Debug\VitaClubAcademia.dll
 C:\Users\thoma\Desktop\VitaClubAcademia-master\VitaClubAcademia\obj\Debug\VitaClubAcademia.pdb
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\System.Data.SqlClient.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\EntityFramework.SqlServer.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\EntityFramework.SqlServer.xml

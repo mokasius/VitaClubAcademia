@@ -2,7 +2,6 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\Domain.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\Domain.pdb
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\EntityFramework.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\System.Data.SqlClient.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\EntityFramework.xml
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
@@ -15,3 +14,7 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csproj.
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.diavencimentoaluno.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.exercicioTreino.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.NovosCamposAluno.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.prop_alunos1.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.update1.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\System.Data.SqlClient.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.DivisaoSeq.resources

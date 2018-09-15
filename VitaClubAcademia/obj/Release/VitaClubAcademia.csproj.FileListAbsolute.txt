@@ -66,3 +66,4 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\obj\Release\Vi
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\obj\Release\VitaClubAcademia.csproj.CopyComplete
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\obj\Release\VitaClubAcademia.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\obj\Release\VitaClubAcademia.pdb
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\System.Data.SqlClient.dll

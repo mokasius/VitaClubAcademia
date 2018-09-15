@@ -24,16 +24,22 @@ namespace Business.Classes
             set { this.divisaoTreinoDO.Id = value; }
         }
 
+        public string Nome
+        {
+            get { return divisaoTreinoDO.Nome; }
+            set { this.divisaoTreinoDO.Nome = value; }
+        }
+
         public int ? TreinoId
         {
             get { return divisaoTreinoDO.TreinoId; }
             set { this.divisaoTreinoDO.TreinoId = value; }
         }
 
-        public int ? Sequencia
+        public int? Sequencia
         {
-            get { return divisaoTreinoDO.TreinoId; }
-            set { this.divisaoTreinoDO.TreinoId = value; }
+            get { return divisaoTreinoDO.Sequencia; }
+            set { this.divisaoTreinoDO.Sequencia = value; }
         }
 
         public string Descricao
@@ -41,7 +47,7 @@ namespace Business.Classes
             get { return divisaoTreinoDO.Descricao; }
             set { this.divisaoTreinoDO.Descricao = value; }
         }
-
+        
         #endregion
 
         #region Construtores

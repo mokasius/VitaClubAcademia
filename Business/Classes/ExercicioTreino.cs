@@ -12,7 +12,7 @@ namespace Business.Classes
         {
         }
 
-        public ExercicioTreino(int treino, int sequencia) : base(treino, sequencia)
+        public ExercicioTreino(int divisaoId, int divisaoSeq, int sequencia) : base(divisaoId, divisaoSeq, sequencia)
         {
         }
 
@@ -21,7 +21,35 @@ namespace Business.Classes
 
         }
 
+        public Exercicio Exercicio { get; set; }
 
+        public static List<ExercicioTreino> GetExercicioTreinos(int? treinoId)
+        {
+            var retorno = new List<ExercicioTreino>();
+            if (treinoId != null)
+                return retorno;
+
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var lista = db.ExerciciosTreino.Where(a => a.DivisaoId == treinoId);
+
+                    ExercicioTreino exercicioTreino = null;
+                    foreach (var item in lista)
+                    {
+                        exercicioTreino = new ExercicioTreino(item);
+                        retorno.Add(exercicioTreino);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
+            return retorno;
+        }
 
     }
 }

@@ -67,6 +67,29 @@ namespace Business.Classes
             }
         }
 
+        public static List<Exercicio> CarregarTodosExercicios()
+        {
+            var retorno = new List<Exercicio>();
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var exercicios = db.Exercicios.ToList();
+
+                    Exercicio exercicio = null;
+                    foreach (var item in exercicios)
+                    {
+                        exercicio = new Exercicio(item);
+                        retorno.Add(exercicio);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return retorno;
+        }
     }
 }
 
