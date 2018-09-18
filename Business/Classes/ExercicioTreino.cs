@@ -23,17 +23,17 @@ namespace Business.Classes
 
         public Exercicio Exercicio { get; set; }
 
-        public static List<ExercicioTreino> GetExercicioTreinos(int? treinoId)
+        public static List<ExercicioTreino> GetExercicioTreinos(int? treinoId, int? seq)
         {
             var retorno = new List<ExercicioTreino>();
-            if (treinoId != null)
+            if (treinoId == null || treinoId == 0)
                 return retorno;
 
             try
             {
                 using (var db = new VitaClubContext())
                 {
-                    var lista = db.ExerciciosTreino.Where(a => a.DivisaoId == treinoId);
+                    var lista = db.ExerciciosTreino.Where(a => a.DivisaoId == treinoId && a.DivisaoSeq == seq);
 
                     ExercicioTreino exercicioTreino = null;
                     foreach (var item in lista)

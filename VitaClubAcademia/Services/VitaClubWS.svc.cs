@@ -155,6 +155,21 @@ namespace VitaClubAcademia.Services
 
         }
 
+        public Stream CarregarTreinos()
+        {
+            try
+            {
+                var listaTreinos = TreinoModel.CarregarTodosTreinos();
+
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<TreinoModel>));
+                return ConverteObjetoParaStream(ser, listaTreinos);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         #endregion
 
         private Stream ConverteObjetoParaStream(DataContractJsonSerializer serializer, object retorno)

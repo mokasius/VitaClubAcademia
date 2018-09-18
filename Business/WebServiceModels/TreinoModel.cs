@@ -28,7 +28,6 @@ namespace Business.WebServiceModels
             treino.DataInicial = this.DataInicial;
             treino.DataFinal = this.DataFinal;
             treino.Status = this.Status;
-            //treino.AlunoId = this.AlunoId;
             treino.Observacao = this.Observacao;
 
             foreach (var divisaoModel in Divisoes)
@@ -40,5 +39,38 @@ namespace Business.WebServiceModels
             return treino;
         }
 
+        public static TreinoModel ConvertToModel(Treino treino)
+        {
+            var treinoModel = new TreinoModel();
+            treinoModel.Id = treino.Id;
+            treinoModel.Descricao = treino.Descricao;
+            treinoModel.DataInicial = treino.DataInicial;
+            treinoModel.DataFinal = treino.DataFinal;
+            treinoModel.Status = treino.Status;
+            treinoModel.Observacao = treino.Observacao;
+
+            treinoModel.Divisoes = new List<DivisaoTreinoModel>();
+            foreach (var divisao in treino.Divisoes)
+            {
+                var divisaoModel = DivisaoTreinoModel.ConvertToModel(divisao);
+                treinoModel.Divisoes.Add(divisaoModel);
+            }
+
+            return treinoModel;
+        }
+
+
+        public static List<TreinoModel> CarregarTodosTreinos()
+        {
+            var retorno = new List<TreinoModel>();
+
+            var treinos = Treino.GetTreinos();
+            foreach (var treino in treinos)
+            {
+                retorno.Add(TreinoModel.ConvertToModel(treino));
+            }
+
+            return retorno;
+        }
     }
 }

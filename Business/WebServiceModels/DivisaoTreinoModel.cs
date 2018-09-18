@@ -36,5 +36,24 @@ namespace Business.WebServiceModels
             return divisao;
         }
 
+        public static DivisaoTreinoModel ConvertToModel(DivisaoTreino divisaoTreino)
+        {
+            var divisaoModel = new DivisaoTreinoModel();
+            divisaoModel.Id = divisaoTreino.Id;
+            divisaoModel.Nome = divisaoTreino.Nome;
+            divisaoModel.TreinoId = divisaoTreino.TreinoId;
+            divisaoModel.Sequencia = divisaoTreino.Sequencia;
+            divisaoModel.Descricao = divisaoTreino.Descricao;
+
+            divisaoModel.Exercicios = new List<ExercicioTreinoModel>();
+            foreach (var exercicioTreino in divisaoTreino.Exercicios)
+            {
+                var exercicioTreinoModel = ExercicioTreinoModel.ConvertToModel(exercicioTreino);
+                divisaoModel.Exercicios.Add(exercicioTreinoModel);
+            }
+
+            return divisaoModel;
+        }
+
     }
 }

@@ -12,21 +12,38 @@ namespace Business.WebServiceModels
         public virtual int? Repeticoes { get; set; }
         public virtual int? Descanso { get; set; }
         public virtual int? Carga { get; set; }
+        public virtual ExercicioModel Exercicio { get; set; }
         public virtual int? ExercicioId { get; set; }
 
         public ExercicioTreino ConvertToDTO()
         {
-            var exercicio = new ExercicioTreino();
-            exercicio.DivisaoId = this.DivisaoId;
-            exercicio.DivisaoSeq = this.DivisaoSeq;
-            exercicio.Sequencia = this.Sequencia;
-            exercicio.Serie = this.Serie;
-            exercicio.Repeticoes = this.Repeticoes;
-            exercicio.Descanso = this.Descanso;
-            exercicio.Carga = this.Carga;
-            exercicio.ExercicioId = this.ExercicioId;
+            var exercicioTreino = new ExercicioTreino();
+            exercicioTreino.DivisaoId = this.DivisaoId;
+            exercicioTreino.DivisaoSeq = this.DivisaoSeq;
+            exercicioTreino.Sequencia = this.Sequencia;
+            exercicioTreino.Serie = this.Serie;
+            exercicioTreino.Repeticoes = this.Repeticoes;
+            exercicioTreino.Descanso = this.Descanso;
+            exercicioTreino.Carga = this.Carga;
+            exercicioTreino.Exercicio = this.Exercicio.ConvertToDTO();
+            exercicioTreino.ExercicioId = exercicioTreino.Exercicio.Id;
 
-            return exercicio;
+            return exercicioTreino;
+        }
+
+        public static ExercicioTreinoModel ConvertToModel(ExercicioTreino exercicioTreino)
+        {
+            var exercicioTreinoModel = new ExercicioTreinoModel();
+            exercicioTreinoModel.DivisaoId = exercicioTreino.DivisaoId;
+            exercicioTreinoModel.DivisaoSeq = exercicioTreino.DivisaoSeq;
+            exercicioTreinoModel.Sequencia = exercicioTreino.Sequencia;
+            exercicioTreinoModel.Serie = exercicioTreino.Serie;
+            exercicioTreinoModel.Repeticoes = exercicioTreino.Repeticoes;
+            exercicioTreinoModel.Descanso = exercicioTreino.Descanso;
+            exercicioTreinoModel.Carga = exercicioTreino.Carga;
+            exercicioTreinoModel.ExercicioId = exercicioTreino.ExercicioId;
+
+            return exercicioTreinoModel;
         }
 
     }

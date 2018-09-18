@@ -26,7 +26,7 @@ namespace Business.Classes
             get
             {
                 if (_exerciciosTreinos == null)
-                    _exerciciosTreinos = ExercicioTreino.GetExercicioTreinos(this.TreinoId);
+                    _exerciciosTreinos = ExercicioTreino.GetExercicioTreinos(this.TreinoId, this.Sequencia);
 
                 return _exerciciosTreinos;
             }
@@ -35,7 +35,7 @@ namespace Business.Classes
         public static List<DivisaoTreino> GetDivisoesTreino(int? treinoId)
         {
             var retorno = new List<DivisaoTreino>();
-            if (treinoId != null)
+            if (treinoId == null || treinoId == 0)
                 return retorno;
 
             try
@@ -60,6 +60,7 @@ namespace Business.Classes
 
             return retorno;
         }
+
     }
 }
 

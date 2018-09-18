@@ -38,6 +38,15 @@ namespace Business
         Ambos = 2
     }
 
+    [DataContract]
+    public enum enumStatusTreino
+    {
+        [EnumMember]
+        Inativo = 1,
+        [EnumMember]
+        Ativo = 0
+    }
+
     public static partial class EnumsExtentions
     {
         public static string Descricao(this enumDiaSemana value)
