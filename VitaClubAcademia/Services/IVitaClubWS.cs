@@ -62,6 +62,9 @@ namespace VitaClubAcademia.Services
         [WebInvoke(Method = "GET", UriTemplate = "CarregarTreinos", ResponseFormat = WebMessageFormat.Json)]
         Stream CarregarTreinos();
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "DeletarTreino", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        void DeletarTreino(string json);
 
         #endregion
 

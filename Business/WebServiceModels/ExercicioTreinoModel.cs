@@ -25,8 +25,8 @@ namespace Business.WebServiceModels
             exercicioTreino.Repeticoes = this.Repeticoes;
             exercicioTreino.Descanso = this.Descanso;
             exercicioTreino.Carga = this.Carga;
-            exercicioTreino.Exercicio = this.Exercicio.ConvertToDTO();
-            exercicioTreino.ExercicioId = exercicioTreino.Exercicio.Id;
+            var ex = this.Exercicio.ConvertToDTO();
+            exercicioTreino.ExercicioId = ex.Id;
 
             return exercicioTreino;
         }
@@ -42,6 +42,7 @@ namespace Business.WebServiceModels
             exercicioTreinoModel.Descanso = exercicioTreino.Descanso;
             exercicioTreinoModel.Carga = exercicioTreino.Carga;
             exercicioTreinoModel.ExercicioId = exercicioTreino.ExercicioId;
+            exercicioTreinoModel.Exercicio = ExercicioModel.ConvertToModel(exercicioTreino.Exercicio);
 
             return exercicioTreinoModel;
         }

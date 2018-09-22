@@ -21,7 +21,7 @@ namespace Business.Classes
 
         }
 
-        public Aluno(AlunoDO aluno) : base(aluno)
+        internal Aluno(AlunoDO aluno) : base(aluno)
         {
 
         }

@@ -15,10 +15,10 @@ namespace Business.Classes
 
         public Exercicio(int id) : base(id)
         {
-            Carregar(id);
+            //Carregar(id);
         }
 
-        public Exercicio(ExercicioDO exercicio) : base(exercicio)
+        internal Exercicio(ExercicioDO exercicio) : base(exercicio)
         {
 
         }

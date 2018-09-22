@@ -155,6 +155,24 @@ namespace VitaClubAcademia.Services
 
         }
 
+        public void DeletarTreino(string json)
+        {
+            try
+            {
+                int treinoId = 0;
+                if(int.TryParse(json, out treinoId))
+                {
+                    var treino = new Treino(treinoId);
+                    treino.DeletarTreino();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public Stream CarregarTreinos()
         {
             try

@@ -15,7 +15,7 @@ namespace Business.Classes
         {
         }
 
-        public Treino(TreinoDO treino) : base(treino)
+        internal Treino(TreinoDO treino) : base(treino)
         {
 
         }
@@ -33,6 +33,43 @@ namespace Business.Classes
             }
         }
 
+        public void DeletarTreino()
+        {
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    DivisaoTreino.DeletarDivisaoTreino(this.Id);
+                    db.Treinos.Remove(this.TreinoDO);
+                    db.SaveChanges();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void Update()
+        {
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var entity = db.Treinos.Find(this.Id);
+                    if (entity != null)
+                    {
+                        db.Entry(entity).CurrentValues.SetValues(this.TreinoDO);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void Save()
         {
             //foreach (var divisao in this.Divisoes)
@@ -44,8 +81,16 @@ namespace Business.Classes
             {
                 using (var db = new VitaClubContext())
                 {
-                    db.Treinos.Add(this.TreinoDO);
-                    db.SaveChanges();
+                    if (this.Id == 0)
+                    {
+                        db.Treinos.Add(this.TreinoDO);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        this.Update();
+                        DivisaoTreino.DeletarDivisaoTreino(this.Id);
+                    }
 
                     var treinoId = this.TreinoDO.Id;
                     var divSeq = 1;

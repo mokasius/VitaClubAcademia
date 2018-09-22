@@ -12,7 +12,6 @@ public class VitaClubContext : DbContext
     {
         Configuration.LazyLoadingEnabled = false;
     }
-
     public DbSet<AlunoDO> Alunos { get; set; }
     public DbSet<TreinoDO> Treinos { get; set; }
     public DbSet<DivisaoTreinoDO> DivisoesTreino { get; set; }
@@ -108,5 +107,6 @@ public class VitaClubContext : DbContext
         //    .WithMany()
         //    .WillCascadeOnDelete(false);
     }
+    
 
 }

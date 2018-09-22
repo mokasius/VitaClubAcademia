@@ -15,7 +15,7 @@ namespace Business.Classes
         {
         }
 
-        public DivisaoTreino(DivisaoTreinoDO divisaoTreino) : base(divisaoTreino)
+        internal DivisaoTreino(DivisaoTreinoDO divisaoTreino) : base(divisaoTreino)
         {
 
         }
@@ -60,6 +60,29 @@ namespace Business.Classes
 
             return retorno;
         }
+
+        public static void DeletarDivisaoTreino(int treinoId)
+        {
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var delDivisao = db.DivisoesTreino.Where(a => a.TreinoId == treinoId).ToList();
+                    foreach (var item in delDivisao)
+                    {
+                        ExercicioTreino.DeletarExercicioTreino((int)item.TreinoId, (int)item.Sequencia);
+
+                        db.DivisoesTreino.Remove(item);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
     }
 }

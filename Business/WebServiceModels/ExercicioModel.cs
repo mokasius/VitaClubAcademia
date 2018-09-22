@@ -17,5 +17,15 @@ namespace Business.WebServiceModels
 
             return exercicio;
         }
+
+        public static ExercicioModel ConvertToModel(Exercicio exercicio)
+        {
+            var exercicioModel = new ExercicioModel();
+            exercicioModel.Id = exercicio.Id;
+            exercicioModel.Descricao = exercicio.Descricao;
+            exercicioModel.GrupoMuscular = (int)exercicio.GrupoMuscular;
+
+            return exercicioModel;
+        }
     }
 }

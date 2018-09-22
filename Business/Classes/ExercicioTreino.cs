@@ -16,12 +16,22 @@ namespace Business.Classes
         {
         }
 
-        public ExercicioTreino(ExercicioTreinoDO exercicioTreino) : base(exercicioTreino)
+        internal ExercicioTreino(ExercicioTreinoDO exercicioTreino) : base(exercicioTreino)
         {
 
         }
 
-        public Exercicio Exercicio { get; set; }
+        private Exercicio _exercicio = null;
+        public Exercicio Exercicio
+        {
+            get
+            { 
+                if (_exercicio == null && this.ExercicioId != null)
+                    _exercicio = new Exercicio((int)this.ExercicioId);
+
+                return _exercicio;
+            }
+        }
 
         public static List<ExercicioTreino> GetExercicioTreinos(int? treinoId, int? seq)
         {
@@ -51,6 +61,22 @@ namespace Business.Classes
             return retorno;
         }
 
+        public static void DeletarExercicioTreino(int divisaoId, int sequencia)
+        {
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var delExercicio = db.ExerciciosTreino.Where(a => a.DivisaoId == divisaoId && a.DivisaoSeq == sequencia).ToList();
+                    db.ExerciciosTreino.RemoveRange(delExercicio);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
 

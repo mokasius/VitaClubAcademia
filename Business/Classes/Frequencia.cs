@@ -15,7 +15,7 @@ namespace Business.Classes
         {
         }
 
-        public Frequencia(FrequenciaDO frequencia) : base(frequencia)
+        internal Frequencia(FrequenciaDO frequencia) : base(frequencia)
         {
 
         }
