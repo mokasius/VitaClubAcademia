@@ -2,6 +2,7 @@
 using Domain.Classes;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace Business.Classes
 {
@@ -72,9 +73,10 @@ namespace Business.Classes
                     {
                         ExercicioTreino.DeletarExercicioTreino((int)item.TreinoId, (int)item.Sequencia);
 
-                        db.DivisoesTreino.Remove(item);
-                        db.SaveChanges();
+                        db.DivisoesTreino.Attach(item);
+                        db.Entry(item).State = EntityState.Deleted;
                     }
+                    db.SaveChanges();
                 }
             }
             catch (Exception ex)

@@ -2,6 +2,7 @@
 using Domain.Classes;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace Business.Classes
 {
@@ -40,7 +41,9 @@ namespace Business.Classes
                 using (var db = new VitaClubContext())
                 {
                     DivisaoTreino.DeletarDivisaoTreino(this.Id);
-                    db.Treinos.Remove(this.TreinoDO);
+
+                    db.Treinos.Attach(this.TreinoDO);
+                    db.Entry(this.TreinoDO).State = EntityState.Deleted;
                     db.SaveChanges();
                 }
             }
@@ -72,11 +75,6 @@ namespace Business.Classes
 
         public void Save()
         {
-            //foreach (var divisao in this.Divisoes)
-            //{
-            //    var id = divisao.Id;
-            //}
-
             try
             {
                 using (var db = new VitaClubContext())
@@ -88,8 +86,8 @@ namespace Business.Classes
                     }
                     else
                     {
-                        this.Update();
                         DivisaoTreino.DeletarDivisaoTreino(this.Id);
+                        this.Update();
                     }
 
                     var treinoId = this.TreinoDO.Id;
@@ -99,7 +97,6 @@ namespace Business.Classes
                         divisao.TreinoId = treinoId;
                         divisao.Sequencia = divSeq++;
                         db.DivisoesTreino.Add(divisao.DivisaoTreinoDO);
-                        db.SaveChanges();
 
                         var exSec = 1;
                         foreach (var exercicio in divisao.Exercicios)
@@ -108,10 +105,9 @@ namespace Business.Classes
                             exercicio.DivisaoSeq = (int)divisao.Sequencia;
                             exercicio.Sequencia = exSec++;
                             db.ExerciciosTreino.Add(exercicio.ExercicioTreinoDO);
-                            db.SaveChanges();
                         }
                     }
-
+                    db.SaveChanges();
                 }
             }
             catch (Exception ex)
@@ -129,28 +125,14 @@ namespace Business.Classes
             {
                 using (var db = new VitaClubContext())
                 {
-                    var treinos = db.Treinos.Where(a => a.Status == (int)enumStatusTreino.Ativo);
+                    // validar as datas validas ?
+                    //var treinos = db.Treinos.Where(a => a.Status == (int)enumStatusTreino.Ativo);
+                    var treinos = db.Treinos;
                     foreach (var treinoDO in treinos)
                     {
                         var treino = new Treino(treinoDO);
+                        //treino.Divisoes = DivisaoTreino.GetDivisoesTreino(treino.Id);
                         treino.Divisoes.Count();
-                        /*
-                        var divisoesTreino = db.DivisoesTreino.Where(a => a.TreinoId == treino.Id);
-                        foreach (var divisaoTreinoDO in divisoesTreino)
-                        {
-                            var divisaoTreino = new DivisaoTreino(divisaoTreinoDO);
-
-                            var exerciciosTreino = db.ExerciciosTreino.Where(a => a.DivisaoId == divisaoTreino.TreinoId && a.DivisaoSeq == divisaoTreino.Sequencia);
-                            foreach (var exerciciosTreinoDO in exerciciosTreino)
-                            {
-                                var exercicioTreino = new ExercicioTreino(exerciciosTreinoDO);
-                                divisaoTreino.Exercicios.Add(exercicioTreino);
-                            }
-
-                            treino.Divisoes.Add(divisaoTreino);
-                        }
-                        */
-
                         retorno.Add(treino);
                     }
                 }

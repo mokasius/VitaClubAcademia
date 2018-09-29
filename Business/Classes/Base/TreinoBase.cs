@@ -29,6 +29,8 @@ namespace Business.Classes
             get { return treinoDO.Descricao; }
             set { this.treinoDO.Descricao = value; }
         }
+        
+        /*
         public DateTime? DataInicial
         {
             get { return treinoDO.DataInicial; }
@@ -44,6 +46,7 @@ namespace Business.Classes
             get { return treinoDO.Status; }
             set { this.treinoDO.Status = value; }
         }
+        */
         //public int ? AlunoId
         //{
         //    get { return treinoDO.AlunoId; }

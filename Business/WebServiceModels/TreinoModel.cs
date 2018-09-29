@@ -12,9 +12,9 @@ namespace Business.WebServiceModels
         public virtual int Id { get; set; }
 
         public string Descricao { get; set; }
-        public DateTime? DataInicial { get; set; }
-        public DateTime? DataFinal { get; set; }
-        public int? Status { get; set; }
+        //public DateTime? DataInicial { get; set; }
+        //public DateTime? DataFinal { get; set; }
+        //public int? Status { get; set; }
         public int? AlunoId { get; set; }
         public string Observacao { get; set; }
         public AlunoModel Aluno { get; set; }
@@ -25,10 +25,11 @@ namespace Business.WebServiceModels
             var treino = new Treino();
             treino.Id = this.Id;
             treino.Descricao = this.Descricao;
-            treino.DataInicial = this.DataInicial;
-            treino.DataFinal = this.DataFinal;
-            treino.Status = this.Status;
+            //treino.DataInicial = this.DataInicial;
+            //treino.DataFinal = this.DataFinal;
+            //treino.Status = this.Status;
             treino.Observacao = this.Observacao;
+            treino.Divisoes.Clear();
 
             foreach (var divisaoModel in Divisoes)
             {
@@ -44,9 +45,9 @@ namespace Business.WebServiceModels
             var treinoModel = new TreinoModel();
             treinoModel.Id = treino.Id;
             treinoModel.Descricao = treino.Descricao;
-            treinoModel.DataInicial = treino.DataInicial;
-            treinoModel.DataFinal = treino.DataFinal;
-            treinoModel.Status = treino.Status;
+            //treinoModel.DataInicial = treino.DataInicial;
+            //treinoModel.DataFinal = treino.DataFinal;
+            //treinoModel.Status = treino.Status;
             treinoModel.Observacao = treino.Observacao;
 
             treinoModel.Divisoes = new List<DivisaoTreinoModel>();

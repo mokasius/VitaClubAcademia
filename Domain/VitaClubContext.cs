@@ -18,6 +18,8 @@ public class VitaClubContext : DbContext
     public DbSet<ExercicioDO> Exercicios { get; set; }
     public DbSet<FrequenciaDO> Frequencias { get; set; }
     public DbSet<ExercicioTreinoDO> ExerciciosTreino { get; set; }
+    public DbSet<AlunoTreinoDO> AlunosTreinos { get; set; }
+    public DbSet<PagamentoDO> Pagamentos { get; set; }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
@@ -31,18 +33,41 @@ public class VitaClubContext : DbContext
         MontaClasseExercicio(modelBuilder);
         MontaClasseFrequencia(modelBuilder);
         MontaClasseExercicioTreino(modelBuilder);
+        MontaClasseAlunosTreinos(modelBuilder);
+        MontaClassePagamento(modelBuilder);
 
         base.OnModelCreating(modelBuilder);
     }
 
-
+    /*
+    private void MontaClasseAlunosTreinos(DbModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<AlunoDO>()
+                .HasMany<TreinoDO>(s => s.Treinos)
+                .WithMany(c => c.Alunos)
+                .Map(cs =>
+                {
+                    cs.MapLeftKey("AlunoId");
+                    cs.MapRightKey("TreinoId");
+                    cs.ToTable("AlunosTreinos");
+                });
+    }
+    */
+    
     private void MontaClasseAluno(DbModelBuilder modelBuilder)
     {
         modelBuilder.Entity<AlunoDO>().ToTable("Aluno");
         modelBuilder.Entity<AlunoDO>().HasKey(c => c.Id);
         modelBuilder.Entity<AlunoDO>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
     }
-    
+
+    private void MontaClasseAlunosTreinos(DbModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<AlunoTreinoDO>().ToTable("AlunosTreinos");
+        modelBuilder.Entity<AlunoTreinoDO>().HasKey(c => c.Id);
+        modelBuilder.Entity<AlunoTreinoDO>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+    }
+
 
     private void MontaClasseTreino(DbModelBuilder modelBuilder)
     {
@@ -101,12 +126,15 @@ public class VitaClubContext : DbContext
     {
         modelBuilder.Entity<FrequenciaDO>().ToTable("Frequencia");
         modelBuilder.Entity<FrequenciaDO>().HasKey(c => new { c.AlunoId, c.Sequencia });
+    }
 
-        //modelBuilder.Entity<FrequenciaDO>()
-        //    .HasOptional(c => c.Aluno)
-        //    .WithMany()
-        //    .WillCascadeOnDelete(false);
+    private void MontaClassePagamento(DbModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<PagamentoDO>().ToTable("Pagamento");
+        modelBuilder.Entity<PagamentoDO>().HasKey(c => new { c.Id, c.AlunoId, c.Mes, c.Ano });
+        modelBuilder.Entity<ExercicioDO>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
     }
     
+
 
 }

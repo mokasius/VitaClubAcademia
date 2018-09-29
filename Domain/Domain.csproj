@@ -52,10 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AlunoDO.cs" />
+    <Compile Include="Classes\AlunoTreinoDO.cs" />
     <Compile Include="Classes\DivisaoTreinoDO.cs" />
     <Compile Include="Classes\ExercicioTreinoDO.cs" />
     <Compile Include="Classes\ExercicioDO.cs" />
     <Compile Include="Classes\FrequenciaDO.cs" />
+    <Compile Include="Classes\PagamentoDO.cs" />
     <Compile Include="Classes\TreinoDO.cs" />
     <Compile Include="Migrations\201806090033221_ajustes_db1.cs" />
     <Compile Include="Migrations\201806090033221_ajustes_db1.Designer.cs">
@@ -85,6 +87,26 @@
     <Compile Include="Migrations\201809132213565_DivisaoSeq.Designer.cs">
       <DependentUpon>201809132213565_DivisaoSeq.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809242238202_NovoAlunosTreinos.cs" />
+    <Compile Include="Migrations\201809242238202_NovoAlunosTreinos.Designer.cs">
+      <DependentUpon>201809242238202_NovoAlunosTreinos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809242257352_AlunosTreinos2.cs" />
+    <Compile Include="Migrations\201809242257352_AlunosTreinos2.Designer.cs">
+      <DependentUpon>201809242257352_AlunosTreinos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809242300329_AlunosTreinos3.cs" />
+    <Compile Include="Migrations\201809242300329_AlunosTreinos3.Designer.cs">
+      <DependentUpon>201809242300329_AlunosTreinos3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809242332033_RemoverPropriedadeAlunoTreino.cs" />
+    <Compile Include="Migrations\201809242332033_RemoverPropriedadeAlunoTreino.Designer.cs">
+      <DependentUpon>201809242332033_RemoverPropriedadeAlunoTreino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809242341276_TabelaPagamento.cs" />
+    <Compile Include="Migrations\201809242341276_TabelaPagamento.Designer.cs">
+      <DependentUpon>201809242341276_TabelaPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="VitaClubContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +135,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809132213565_DivisaoSeq.resx">
       <DependentUpon>201809132213565_DivisaoSeq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809242238202_NovoAlunosTreinos.resx">
+      <DependentUpon>201809242238202_NovoAlunosTreinos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809242257352_AlunosTreinos2.resx">
+      <DependentUpon>201809242257352_AlunosTreinos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809242300329_AlunosTreinos3.resx">
+      <DependentUpon>201809242300329_AlunosTreinos3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809242332033_RemoverPropriedadeAlunoTreino.resx">
+      <DependentUpon>201809242332033_RemoverPropriedadeAlunoTreino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809242341276_TabelaPagamento.resx">
+      <DependentUpon>201809242341276_TabelaPagamento.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

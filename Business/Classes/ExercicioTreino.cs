@@ -2,6 +2,7 @@
 using Domain.Classes;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace Business.Classes
 {
@@ -68,7 +69,12 @@ namespace Business.Classes
                 using (var db = new VitaClubContext())
                 {
                     var delExercicio = db.ExerciciosTreino.Where(a => a.DivisaoId == divisaoId && a.DivisaoSeq == sequencia).ToList();
-                    db.ExerciciosTreino.RemoveRange(delExercicio);
+
+                    foreach (var item in delExercicio)
+                    {
+                        db.ExerciciosTreino.Attach(item);
+                        db.Entry(item).State = EntityState.Deleted;
+                    }
                     db.SaveChanges();
                 }
             }

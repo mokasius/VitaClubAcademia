@@ -8,6 +8,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.ServiceModel;
 using System.Text;
+using System.Web.Http;
 using System.Web.Script.Serialization;
 
 namespace VitaClubAcademia.Services
@@ -186,6 +187,36 @@ namespace VitaClubAcademia.Services
             {
                 return null;
             }
+        }
+
+        public void SalvarAlunoTreino(string json)
+        {
+            try
+            {
+                var alunoTreino = new JavaScriptSerializer().Deserialize<AlunoTreino>(json);
+                alunoTreino.VincularTreino();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public string SalvarPagamento(string json)
+        {
+            try
+            {
+                var pagamento = new JavaScriptSerializer().Deserialize<Pagamento>(json);
+                pagamento.Salvar();
+
+                return"OK";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+
         }
 
         #endregion

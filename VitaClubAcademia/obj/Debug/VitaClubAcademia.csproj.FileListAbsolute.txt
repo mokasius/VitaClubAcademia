@@ -201,3 +201,7 @@ C:\Users\thoma\Desktop\VitaClubAcademia-master\VitaClubAcademia\obj\Debug\VitaCl
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\System.Data.SqlClient.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\EntityFramework.SqlServer.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\EntityFramework.SqlServer.xml
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\System.Net.Http.Formatting.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\System.Web.Http.dll
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\System.Net.Http.Formatting.xml
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\VitaClubAcademia\bin\System.Web.Http.xml

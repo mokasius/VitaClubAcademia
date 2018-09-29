@@ -25,7 +25,7 @@ namespace Business.WebServiceModels
             divisao.TreinoId = this.TreinoId;
             divisao.Sequencia = this.Sequencia;
             divisao.Descricao = this.Descricao;
-
+            divisao.Exercicios.Clear();
 
             foreach (var exercicioModel in Exercicios)
             {

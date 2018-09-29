@@ -53,8 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Pagamento.cs" />
+    <Compile Include="Classes\Base\PagamentoBase.cs" />
     <Compile Include="Classes\Base\DivisaoTreinoBase.cs" />
     <Compile Include="Classes\Base\ExercicioTreinoBase.cs" />
+    <Compile Include="Classes\Base\AlunoTreinoBase.cs" />
     <Compile Include="Classes\Base\TreinoBase.cs" />
     <Compile Include="Classes\Base\FrequenciaBase.cs" />
     <Compile Include="Classes\Base\ExercicioBase.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Classes\Exercicio.cs" />
     <Compile Include="Classes\DivisaoTreino.cs" />
     <Compile Include="Classes\Frequencia.cs" />
+    <Compile Include="Classes\AlunoTreino.cs" />
     <Compile Include="Classes\Treino.cs" />
     <Compile Include="Classes\Aluno.cs" />
     <Compile Include="EFManager.cs" />

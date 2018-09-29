@@ -68,6 +68,14 @@ namespace VitaClubAcademia.Services
 
         #endregion
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "SalvarAlunoTreino", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        void SalvarAlunoTreino(string json);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "SalvarPagamento", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string SalvarPagamento(string json);
+
 
     }
 }
