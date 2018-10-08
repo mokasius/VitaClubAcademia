@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="VitaClubContext-Web.config Connection String" description="VitaClubContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=vitaclubdb.database.windows.net;Initial Catalog=VitaClubDB;Integrated Security=False;User ID=administrador;Password=Mokasius!23;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+  <parameter name="VitaClubContext-Web.config Connection String" description="VitaClubContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=vitaclubproducao.database.windows.net;Initial Catalog=vitaclub_producao;Integrated Security=False;User ID=administrador;Password=vitaclub!23;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\thoma\\Desktop\\Projetos\\VitaClubAcademia\\VitaClubAcademia\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='VitaClubContext']/@connectionString" />
   </parameter>
 </parameters>

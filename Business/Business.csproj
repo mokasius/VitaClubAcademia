@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Uteis\Email.cs" />
     <Compile Include="Classes\Pagamento.cs" />
     <Compile Include="Classes\Base\PagamentoBase.cs" />
     <Compile Include="Classes\Base\DivisaoTreinoBase.cs" />

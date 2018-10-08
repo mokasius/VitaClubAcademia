@@ -74,8 +74,17 @@ namespace VitaClubAcademia.Services
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SalvarPagamento", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        //ErrorResponse SalvarPagamento(string json);
         string SalvarPagamento(string json);
 
 
     }
+
+    [DataContract]
+    public class ErrorResponse
+    {
+        [DataMember(Name = "errorMessage")]
+        public string Mensagem { get; set; }
+    }
+
 }

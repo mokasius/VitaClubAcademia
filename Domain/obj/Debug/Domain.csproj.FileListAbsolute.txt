@@ -18,8 +18,5 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrati
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.update1.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\System.Data.SqlClient.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.DivisaoSeq.resources
-C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.NovoAlunosTreinos.resources
-C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.AlunosTreinos2.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.AlunosTreinos3.resources
-C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.RemoverPropriedadeAlunoTreino.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.TabelaPagamento.resources

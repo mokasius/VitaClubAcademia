@@ -114,6 +114,8 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\vitaclubproducao - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\vitaclubproducao - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\vitaclubws - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
