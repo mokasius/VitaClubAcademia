@@ -37,7 +37,7 @@ namespace Business.Uteis
 
                 if (anexo.Arquivo != null)
                     mail.Attachments.Add(new Attachment(anexo.Arquivo, anexo.Nome));
-
+                
                 SmtpServer.Send(mail);
                 return true;
             }

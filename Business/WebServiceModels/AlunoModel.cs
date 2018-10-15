@@ -95,7 +95,7 @@ namespace Business.WebServiceModels
             alunoModel.DiaVencimento = aluno.DiaVencimento;
             alunoModel.Sexo = aluno.Sexo;
             alunoModel.Turno = aluno.Turno;
-            alunoModel.DiasSemana = aluno.DiasSemana != null ? aluno.DiasSemana.Split(',').Select(Int32.Parse).ToList() : new List<int>();
+            alunoModel.DiasSemana = !string.IsNullOrEmpty(aluno.DiasSemana) ? aluno.DiasSemana.Split(',').Select(Int32.Parse).ToList() : new List<int>();
             alunoModel.Tipo = aluno.Tipo;
             alunoModel.Observacao = aluno.Observacao;
             alunoModel.PlanoSaude = aluno.PlanoSaude;

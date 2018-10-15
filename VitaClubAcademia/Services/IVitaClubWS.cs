@@ -32,7 +32,7 @@ namespace VitaClubAcademia.Services
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SalvarAluno", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void SalvarAluno(string json);
+        Stream SalvarAluno(string json);
 
         #endregion
 
@@ -40,7 +40,7 @@ namespace VitaClubAcademia.Services
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SalvarExercicio", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void SalvarExercicio(string json);
+        Stream SalvarExercicio(string json);
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "CarregarExercicio/{codigo}", ResponseFormat = WebMessageFormat.Json)]
@@ -56,7 +56,7 @@ namespace VitaClubAcademia.Services
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SalvarTreino", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void SalvarTreino(string json);
+        Stream SalvarTreino(string json);
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "CarregarTreinos", ResponseFormat = WebMessageFormat.Json)]
@@ -64,27 +64,31 @@ namespace VitaClubAcademia.Services
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "DeletarTreino", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void DeletarTreino(string json);
+        Stream DeletarTreino(string json);
 
         #endregion
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SalvarAlunoTreino", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void SalvarAlunoTreino(string json);
+        Stream SalvarAlunoTreino(string json);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SalvarPagamento", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        //ErrorResponse SalvarPagamento(string json);
-        string SalvarPagamento(string json);
+        Stream SalvarPagamento(string json);
 
+        /*
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "EnviarEmailPagamento", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        void EnviarEmailPagamento(Stream json);
+        */
+        
     }
 
     [DataContract]
-    public class ErrorResponse
+    public class Status
     {
-        [DataMember(Name = "errorMessage")]
-        public string Mensagem { get; set; }
+        public string errorMessage { get; set; }
     }
 
 }

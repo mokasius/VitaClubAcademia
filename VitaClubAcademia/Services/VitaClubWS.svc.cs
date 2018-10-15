@@ -34,8 +34,9 @@ namespace VitaClubAcademia.Services
 
         #region Metodos Aluno
 
-        public void SalvarAluno(string json)
+        public Stream SalvarAluno(string json)
         {
+            var retorno = string.Empty;
             var alunoModel = new JavaScriptSerializer().Deserialize<AlunoModel>(json);
             var aluno = alunoModel.ConvertToDTO();
 
@@ -46,9 +47,11 @@ namespace VitaClubAcademia.Services
             }
             catch (Exception ex)
             {
-                throw ex;
+                retorno = ex.Message;
             }
-            
+
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(string));
+            return ConverteObjetoParaStream(ser, retorno);
         }
 
         public Stream CarregarAluno(string codigo)
@@ -97,8 +100,9 @@ namespace VitaClubAcademia.Services
 
         #region Metodos Exercicio
 
-        public void SalvarExercicio(string json)
+        public Stream SalvarExercicio(string json)
         {
+            var retorno = string.Empty;
             var exercicio = new JavaScriptSerializer().Deserialize<Exercicio>(json);
 
             try
@@ -107,9 +111,11 @@ namespace VitaClubAcademia.Services
             }
             catch (Exception ex)
             {
-                throw ex;
+                retorno = ex.Message;
             }
 
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(string));
+            return ConverteObjetoParaStream(ser, retorno);
         }
 
         public Stream CarregarExercicio(string codigo)
@@ -149,8 +155,9 @@ namespace VitaClubAcademia.Services
 
         #region Metodos Treino
 
-        public void SalvarTreino(string json)
+        public Stream SalvarTreino(string json)
         {
+            var retorno = string.Empty;
             try
             {
                 var treinoModel = new JavaScriptSerializer().Deserialize<TreinoModel>(json);
@@ -160,13 +167,16 @@ namespace VitaClubAcademia.Services
             }
             catch (Exception ex)
             {
-                throw ex;
+                retorno = ex.Message;
             }
 
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(string));
+            return ConverteObjetoParaStream(ser, retorno);
         }
 
-        public void DeletarTreino(string json)
+        public Stream DeletarTreino(string json)
         {
+            var retorno = string.Empty;
             try
             {
                 int treinoId = 0;
@@ -178,9 +188,11 @@ namespace VitaClubAcademia.Services
             }
             catch (Exception ex)
             {
-                throw ex;
+                retorno = ex.Message;
             }
 
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(string));
+            return ConverteObjetoParaStream(ser, retorno);
         }
 
         public Stream CarregarTreinos()
@@ -198,12 +210,56 @@ namespace VitaClubAcademia.Services
             }
         }
 
-        public void SalvarAlunoTreino(string json)
+        public Stream SalvarAlunoTreino(string json)
         {
+            var retorno = string.Empty;
             try
             {
                 var alunoTreino = new JavaScriptSerializer().Deserialize<AlunoTreino>(json);
                 alunoTreino.VincularTreino();
+            }
+            catch (Exception ex)
+            {
+                retorno = ex.Message;
+            }
+
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(string));
+            return ConverteObjetoParaStream(ser, retorno);
+        }
+
+        #endregion
+
+        #region Pagamentos
+        
+        public Stream SalvarPagamento(string json)
+        {
+            var retorno = string.Empty;
+            try
+            {
+                var pagamento = new JavaScriptSerializer().Deserialize<Pagamento>(json);
+                pagamento.Salvar();
+
+                //var email = new Email();
+                //email.Assunto = "Email teste";
+                //email.Texto = "texto do email";
+                //email.EnviarEmail("thomas.bellaver@gmail.com");
+            }
+            catch (Exception ex)
+            {
+                retorno = ex.Message;
+            }
+
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(string));
+            return ConverteObjetoParaStream(ser, retorno);
+        }
+
+        
+        public void EnviarEmailPagamento(string json)
+        {
+            try
+            {
+                var teste = new JavaScriptSerializer().Deserialize<dynamic>(json);
+                
             }
             catch (Exception ex)
             {
@@ -212,57 +268,17 @@ namespace VitaClubAcademia.Services
 
         }
 
-
-        #endregion
-
-        #region Pagamentos
-
         /*
-        public ErrorResponse SalvarPagamento(string json)
-        {
-            try
-            {
-                var pagamento = new JavaScriptSerializer().Deserialize<Pagamento>(json);
-                pagamento.Salvar();
-                
-                var email = new Email();
-                email.Assunto = "Email teste";
-                email.Texto = "texto do email";
-                //email.EnviarEmail("thomas.bellaver@gmail.com");
-
-                var resp = new ErrorResponse();
-                return resp;
-            }
-            catch (Exception ex)
-            {
-                var resp = new ErrorResponse();
-                resp.Mensagem = ex.Message;
-                return resp;
-            }
-
-        }
-        */
-
         public string SalvarPagamento(string json)
         {
-            try
-            {
-                var pagamento = new JavaScriptSerializer().Deserialize<Pagamento>(json);
-                pagamento.Salvar();
-
-                var email = new Email();
-                email.Assunto = "Email teste";
-                email.Texto = "texto do email";
-                //email.EnviarEmail("thomas.bellaver@gmail.com");
-
-                return "OK";
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-
+            throw new NotImplementedException();
         }
+
+        public void EnviarEmailPagamento(Stream json)
+        {
+            throw new NotImplementedException();
+        }
+        */
 
         #endregion
 
@@ -275,5 +291,7 @@ namespace VitaClubAcademia.Services
 
             return sr.BaseStream;
         }
+
+        
     }
 }
