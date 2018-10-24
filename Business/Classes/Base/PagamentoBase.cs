@@ -48,6 +48,13 @@ namespace Business.Classes
             set { this.pagamentoDO.Valor = value; }
         }
 
+        public virtual DateTime DataPagamento
+        {
+            get { return pagamentoDO.DataPagamento; }
+            set { this.pagamentoDO.DataPagamento = value; }
+        }
+        
+
         #endregion
 
         #region Construtores

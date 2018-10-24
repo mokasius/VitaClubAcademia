@@ -18,15 +18,17 @@ namespace Business.Classes
 
         public Aluno(int id) : base(id)
         {
-
+            FrequenciaHidro = new List<FrequenciaHidro>();
         }
 
         internal Aluno(AlunoDO aluno) : base(aluno)
         {
-
+            FrequenciaHidro = new List<FrequenciaHidro>();
         }
 
         #endregion
+
+        public List<FrequenciaHidro> FrequenciaHidro { get; set; }
 
         /*
         public new enumTipoAluno EnumTipo
@@ -141,6 +143,36 @@ namespace Business.Classes
             return new Aluno();
         }
 
+        public static void Deletar(int id)
+        {
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var alunoDO = db.Alunos.SingleOrDefault(a => a.Id == id);
+
+                    if (alunoDO != null)
+                    {
+                        alunoDO.Excluido = (int)enumExcluido.Sim;
+                        db.Alunos.AddOrUpdate(alunoDO);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Deletar()
+        {
+            //listas para deletar:
+            //FrequenciaHidro
+            
+            //Treino e filhos...
+        }
+        
         public static List<Aluno> CarregarAlunos()
         {
             try
@@ -148,15 +180,18 @@ namespace Business.Classes
                 using (var db = new VitaClubContext())
                 {
                     var retorno = new List<Aluno>();
-                    var alunos = db.Alunos.ToList();
+                    var alunos = db.Alunos.Where(a => a.Excluido == (int)enumExcluido.Nao).ToList();
 
-                    foreach (var aluno in alunos)
+                    foreach (var alunoDO in alunos)
                     {
-                        var a = new Aluno(aluno);
-                        a.Treinos.Count();
-                        //a.Treinos.Clear();  //limpa os treinos para nao ficar pesado na hora de passar pro mobile
-                        //retorno.Add(new Aluno(aluno));
-                        retorno.Add(a);
+                        var aluno = new Aluno(alunoDO);
+                        aluno.Treinos.Count();
+
+                        var frequenciasHidro = db.FrequenciasHidro.Where(a => a.AlunoId == aluno.Id).ToList();
+                        foreach (var item in frequenciasHidro)
+                            aluno.FrequenciaHidro.Add(new FrequenciaHidro(item));
+
+                        retorno.Add(aluno);
                     }
 
                     return retorno;

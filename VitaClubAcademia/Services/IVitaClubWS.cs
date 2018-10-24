@@ -34,6 +34,10 @@ namespace VitaClubAcademia.Services
         [WebInvoke(Method = "POST", UriTemplate = "SalvarAluno", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Stream SalvarAluno(string json);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "DeletarAluno", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        Stream DeletarAluno(string json);
+
         #endregion
 
         #region Metodos Exercicio
@@ -76,13 +80,33 @@ namespace VitaClubAcademia.Services
         [WebInvoke(Method = "POST", UriTemplate = "SalvarPagamento", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Stream SalvarPagamento(string json);
 
+        #region Metodos Pagamento
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "CarregarUltimosPgtosAluno/{codigo}", ResponseFormat = WebMessageFormat.Json)]
+        Stream CarregarUltimosPgtosAluno(string codigo);
+
+        #endregion
+
+        #region Metodos Hidro
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "SalvarFrequenciasHidro", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        Stream SalvarFrequenciasHidro(string json);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "CarregarFrequencias/{presentes}", ResponseFormat = WebMessageFormat.Json)]
+        Stream CarregarFrequencias(string presentes);
+
+        #endregion
+
         /*
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "EnviarEmailPagamento", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         void EnviarEmailPagamento(Stream json);
         */
-        
+
     }
 
     [DataContract]

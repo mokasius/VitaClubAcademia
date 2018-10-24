@@ -27,6 +27,8 @@ namespace Domain.Classes
         public string Observacao { get; set; }
         public string PlanoSaude { get; set; }
         public string TipoSanguineo { get; set; }
+        public int HorarioHidro { get; set; }
+        public int Excluido { get; set; }
 
         //public virtual ICollection<TreinoDO> Treinos { get; set; }
         //public virtual ICollection<FrequenciaDO> Frequencias { get; set; }

@@ -58,6 +58,29 @@ namespace Business.Classes
 
         }
 
+        public static List<Pagamento> CarregarUltimosPgtosAluno(int alunoId)
+        {
+            var retorno = new List<Pagamento>();
+
+            try
+            {
+                using (var db = new VitaClubContext())
+                {
+                    var query = db.Pagamentos.Where(a => a.AlunoId == alunoId).Take(3).OrderByDescending(a => a.Ano).ThenByDescending(a => a.Mes);
+                    foreach (var item in query)
+                    {
+                        retorno.Add(new Pagamento(item));
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return retorno;
+        }
+
     }
 }
 

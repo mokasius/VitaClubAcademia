@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Base\FrequenciaHidroBase.cs" />
+    <Compile Include="Classes\FrequenciaHidro.cs" />
     <Compile Include="Uteis\Email.cs" />
     <Compile Include="Classes\Pagamento.cs" />
     <Compile Include="Classes\Base\PagamentoBase.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="WebServiceModels\DivisaoTreinoModel.cs" />
     <Compile Include="WebServiceModels\ExercicioModel.cs" />
     <Compile Include="WebServiceModels\ExercicioTreinoModel.cs" />
+    <Compile Include="WebServiceModels\FrequenciaHidroModel.cs" />
     <Compile Include="WebServiceModels\TreinoModel.cs" />
   </ItemGroup>
   <ItemGroup>

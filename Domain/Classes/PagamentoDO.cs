@@ -11,6 +11,7 @@ namespace Domain.Classes
         public double Valor { get; set; }
         public int Mes { get; set; }
         public int Ano { get; set; }
+        public DateTime DataPagamento { get; set; }
     }
 
 

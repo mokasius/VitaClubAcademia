@@ -137,7 +137,19 @@ namespace Business.Classes
             get { return alunoDO.TipoSanguineo; }
             set { this.alunoDO.TipoSanguineo = value; }
         }
-        
+
+        public virtual int HorarioHidro
+        {
+            get { return alunoDO.HorarioHidro; }
+            set { this.alunoDO.HorarioHidro = value; }
+        }
+
+        public virtual int Excluido
+        {
+            get { return alunoDO.Excluido; }
+            set { this.alunoDO.Excluido = value; }
+        }
+
         #endregion
 
         #region Construtores

@@ -17,6 +17,7 @@ public class VitaClubContext : DbContext
     public DbSet<DivisaoTreinoDO> DivisoesTreino { get; set; }
     public DbSet<ExercicioDO> Exercicios { get; set; }
     public DbSet<FrequenciaDO> Frequencias { get; set; }
+    public DbSet<FrequenciaHidroDO> FrequenciasHidro { get; set; }
     public DbSet<ExercicioTreinoDO> ExerciciosTreino { get; set; }
     public DbSet<AlunoTreinoDO> AlunosTreinos { get; set; }
     public DbSet<PagamentoDO> Pagamentos { get; set; }
@@ -35,6 +36,7 @@ public class VitaClubContext : DbContext
         MontaClasseExercicioTreino(modelBuilder);
         MontaClasseAlunosTreinos(modelBuilder);
         MontaClassePagamento(modelBuilder);
+        MontaClasseFrequenciaHidro(modelBuilder);
 
         base.OnModelCreating(modelBuilder);
     }
@@ -126,6 +128,12 @@ public class VitaClubContext : DbContext
     {
         modelBuilder.Entity<FrequenciaDO>().ToTable("Frequencia");
         modelBuilder.Entity<FrequenciaDO>().HasKey(c => new { c.AlunoId, c.Sequencia });
+    }
+
+    private void MontaClasseFrequenciaHidro(DbModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<FrequenciaHidroDO>().ToTable("FrequenciaHidro");
+        modelBuilder.Entity<FrequenciaHidroDO>().HasKey(c => new { c.AlunoId, c.Data });
     }
 
     private void MontaClassePagamento(DbModelBuilder modelBuilder)

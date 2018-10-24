@@ -56,6 +56,7 @@
     <Compile Include="Classes\DivisaoTreinoDO.cs" />
     <Compile Include="Classes\ExercicioTreinoDO.cs" />
     <Compile Include="Classes\ExercicioDO.cs" />
+    <Compile Include="Classes\FrequenciaHidroDO.cs" />
     <Compile Include="Classes\FrequenciaDO.cs" />
     <Compile Include="Classes\PagamentoDO.cs" />
     <Compile Include="Classes\TreinoDO.cs" />
@@ -95,6 +96,18 @@
     <Compile Include="Migrations\201809242341276_TabelaPagamento.Designer.cs">
       <DependentUpon>201809242341276_TabelaPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810162352072_CriacaoClasse_FrequenciaHidro.cs" />
+    <Compile Include="Migrations\201810162352072_CriacaoClasse_FrequenciaHidro.Designer.cs">
+      <DependentUpon>201810162352072_CriacaoClasse_FrequenciaHidro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810172244525_NovaPropAluno_HorarioHidro.cs" />
+    <Compile Include="Migrations\201810172244525_NovaPropAluno_HorarioHidro.Designer.cs">
+      <DependentUpon>201810172244525_NovaPropAluno_HorarioHidro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810242218134_PropAluno_e_Pagamento.cs" />
+    <Compile Include="Migrations\201810242218134_PropAluno_e_Pagamento.Designer.cs">
+      <DependentUpon>201810242218134_PropAluno_e_Pagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="VitaClubContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +142,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809242341276_TabelaPagamento.resx">
       <DependentUpon>201809242341276_TabelaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810162352072_CriacaoClasse_FrequenciaHidro.resx">
+      <DependentUpon>201810162352072_CriacaoClasse_FrequenciaHidro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810172244525_NovaPropAluno_HorarioHidro.resx">
+      <DependentUpon>201810172244525_NovaPropAluno_HorarioHidro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810242218134_PropAluno_e_Pagamento.resx">
+      <DependentUpon>201810242218134_PropAluno_e_Pagamento.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

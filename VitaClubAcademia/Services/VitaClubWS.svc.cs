@@ -54,6 +54,22 @@ namespace VitaClubAcademia.Services
             return ConverteObjetoParaStream(ser, retorno);
         }
 
+        public Stream DeletarAluno(string codigo)
+        {
+            try
+            {
+                int id = int.Parse(codigo);
+                Aluno.Deletar(id);
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(string));
+                return ConverteObjetoParaStream(ser, ex.Message);
+            }
+        }
+
         public Stream CarregarAluno(string codigo)
         {
             try
@@ -83,7 +99,8 @@ namespace VitaClubAcademia.Services
                 var alunos = Aluno.CarregarAlunos();
                 foreach (var aluno in alunos)
                 {
-                    alunosModel.Add(AlunoModel.ConvertToModel(aluno));
+                    var model = AlunoModel.ConvertToModel(aluno);
+                    alunosModel.Add(model);
                 }
 
                 DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<AlunoModel>));
@@ -253,7 +270,22 @@ namespace VitaClubAcademia.Services
             return ConverteObjetoParaStream(ser, retorno);
         }
 
-        
+        public Stream CarregarUltimosPgtosAluno(string alunoId)
+        {
+            try
+            {
+                int id = Convert.ToInt32(alunoId);
+                var pagamentos = Pagamento.CarregarUltimosPgtosAluno(id);
+                
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<Pagamento>));
+                return ConverteObjetoParaStream(ser, pagamentos);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public void EnviarEmailPagamento(string json)
         {
             try
@@ -281,6 +313,58 @@ namespace VitaClubAcademia.Services
         */
 
         #endregion
+
+
+        #region Metodos Hidro
+
+        public Stream SalvarFrequenciasHidro(string json)
+        {
+            var retorno = string.Empty;
+            try
+            {
+                var listaFrequencias = new JavaScriptSerializer().Deserialize<List<FrequenciaHidroModel>>(json);
+
+                foreach (var item in listaFrequencias)
+                {
+                    var frequencia = item.ConvertToDTO();
+                    frequencia.Salvar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                retorno = ex.Message;
+
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(string));
+                return ConverteObjetoParaStream(ser, retorno);
+            }
+
+            return null;
+        }
+
+        public Stream CarregarFrequencias(string presentes)
+        {
+            try
+            {
+                bool _presentes = Convert.ToBoolean(presentes);
+                var frequencias = FrequenciaHidro.CarregarFrequencias(_presentes);
+
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<FrequenciaHidro>));
+                return ConverteObjetoParaStream(ser, frequencias);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        #endregion
+
+
+
+
+
 
         private Stream ConverteObjetoParaStream(DataContractJsonSerializer serializer, object retorno)
         {

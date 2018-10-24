@@ -9,6 +9,11 @@ namespace Business.WebServiceModels
 {
     public class AlunoModel
     {
+        public AlunoModel()
+        {
+            this.FrequenciaHidro = new List<FrequenciaHidroModel>();
+        }
+
         public virtual int Id { get; set; }
 
         public virtual string Nome { get; set; }
@@ -49,6 +54,11 @@ namespace Business.WebServiceModels
 
         public virtual string TipoSanguineo { get; set; }
 
+        public virtual int HorarioHidro { get; set; }
+
+        public virtual List<FrequenciaHidroModel> FrequenciaHidro { get; set; }
+
+
 
         public Aluno ConvertToDTO()
         {
@@ -73,6 +83,13 @@ namespace Business.WebServiceModels
             aluno.Observacao = this.Observacao;
             aluno.PlanoSaude = this.PlanoSaude;
             aluno.TipoSanguineo = this.TipoSanguineo;
+            aluno.HorarioHidro = this.HorarioHidro;
+
+            aluno.FrequenciaHidro = new List<FrequenciaHidro>();
+            foreach (var item in this.FrequenciaHidro)
+            {
+                aluno.FrequenciaHidro.Add(item.ConvertToDTO());
+            }
             
             return aluno;
         }
@@ -100,6 +117,16 @@ namespace Business.WebServiceModels
             alunoModel.Observacao = aluno.Observacao;
             alunoModel.PlanoSaude = aluno.PlanoSaude;
             alunoModel.TipoSanguineo = aluno.TipoSanguineo;
+            alunoModel.HorarioHidro = aluno.HorarioHidro;
+
+            alunoModel.FrequenciaHidro = new List<FrequenciaHidroModel>();
+            if (aluno.FrequenciaHidro != null)
+            {
+                foreach (var item in aluno.FrequenciaHidro)
+                {
+                    alunoModel.FrequenciaHidro.Add(FrequenciaHidroModel.ConvertToModel(item));
+                }
+            }
 
             return alunoModel;
         }

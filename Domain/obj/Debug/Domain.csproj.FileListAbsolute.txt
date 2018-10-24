@@ -8,7 +8,6 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csproj.
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csproj.CopyComplete
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.dll
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.pdb
-C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.ajustes_db1.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csproj.GenerateResource.cache
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.diavencimentoaluno.resources
@@ -20,3 +19,7 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\bin\Debug\System.Data.Sq
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.DivisaoSeq.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.AlunosTreinos3.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.TabelaPagamento.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.CriacaoClasse_FrequenciaHidro.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.NovaPropAluno_HorarioHidro.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Debug\Domain.Migrations.PropAluno_e_Pagamento.resources

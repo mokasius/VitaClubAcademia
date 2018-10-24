@@ -28,6 +28,15 @@ namespace Business
     }
 
     [DataContract]
+    public enum enumExcluido
+    {
+        [EnumMember]
+        Nao = 0,
+        [EnumMember]
+        Sim = 1
+    }
+
+    [DataContract]
     public enum enumTipoAluno
     {
         [EnumMember]
@@ -36,6 +45,15 @@ namespace Business
         Hidro = 1,
         [EnumMember]
         Ambos = 2
+    }
+
+    [DataContract]
+    public enum enumStatusAluno
+    {
+        [EnumMember]
+        Ativo = 0,
+        [EnumMember]
+        Inativo = 1
     }
 
     [DataContract]
