@@ -42,28 +42,22 @@ namespace Business.Classes
                 using (var db = new VitaClubContext())
                 {
                     var dataBase = DateTime.Today.AddDays(-7);
-                    var alunosHidro = db.Alunos.Where(a => a.Excluido == (int)enumExcluido.Nao 
-                                                    && a.Status == (int)enumStatusAluno.Ativo 
-                                                    && (a.Tipo == (int)enumTipoAluno.Hidro || a.Tipo == (int)enumTipoAluno.Ambos))
-                                               .Select(a => a.Id).ToArray();
+                    
+                    // Query para carregar as frequencias dos alunos que estao ativos e fazem parte da hidro e que tem a frequencia selecionada
+                    // Também valida se é para carregar os presentes na ultima semana ou ultima vez que foi a partir de 1 semana
+                    var pesquisa =
+                        (from aluno in db.Alunos
+                         join freq in db.FrequenciasHidro on aluno.Id equals freq.AlunoId
+                         where aluno.Excluido == (int)enumExcluido.Nao
+                             && aluno.Status == (int)enumStatusAluno.Ativo
+                             && (aluno.Tipo == (int)enumTipoAluno.Hidro || aluno.Tipo == (int)enumTipoAluno.Ambos)
+                             && freq.Selecionado == 1 && (presentes ? freq.Data > dataBase : freq.Data < dataBase)
+                         group freq by freq.AlunoId into frequencia
+                         select frequencia.OrderByDescending(a => a.Data).FirstOrDefault());
 
-                    // carrega todas as frequencias dos alunos possiveis, ordenando pela data
-                    var query = db.FrequenciasHidro.Where(a => alunosHidro.Contains(a.AlunoId)).OrderByDescending(a => a.Data).ToList();
-                    var ultimaDataPorAluno = new HashSet<FrequenciaHidro>();
-                    foreach (var alunoId in alunosHidro)
+                    foreach (var item in pesquisa)
                     {
-                        var freq = query.FirstOrDefault(a => a.AlunoId == alunoId);
-                        if (freq != null)
-                            ultimaDataPorAluno.Add(new FrequenciaHidro(freq));
-                    }
-
-                    if (presentes)
-                    {
-                        retorno = ultimaDataPorAluno.Where(a => a.Data >= dataBase).ToList();
-                    }
-                    else
-                    {
-                        retorno = ultimaDataPorAluno.Where(a => a.Data <= dataBase).ToList();
+                        retorno.Add(new FrequenciaHidro(item));
                     }
                 }
             }

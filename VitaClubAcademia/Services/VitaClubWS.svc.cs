@@ -290,8 +290,51 @@ namespace VitaClubAcademia.Services
         {
             try
             {
-                var teste = new JavaScriptSerializer().Deserialize<dynamic>(json);
-                
+                json = json.Substring(1, json.Length - 2);
+                string[] arr = json.Split(',');
+                byte[] bResult = new byte[arr.Length];
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    bResult[i] = byte.Parse(arr[i]);
+                }
+
+
+                //var teste = new JavaScriptSerializer().Deserialize<dynamic>(json);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public void EnviarEmailPagamento2(Stream json)
+        {
+            try
+            {
+                byte[] arr = null;
+                byte[] buffer = new byte[16 * 1024];
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    int read;
+                    while ((read = json.Read(buffer, 0, buffer.Length)) > 0)
+                    {
+                        ms.Write(buffer, 0, read);
+                    }
+                    arr = ms.ToArray();
+                }
+
+                var email = new Email();
+                email.Assunto = "Email teste";
+                email.Texto = "texto do email";
+                var anexoEmail = new AnexoEmail();
+                anexoEmail.Nome = "nome.png";
+                anexoEmail.Arquivo = json;
+                email.EnviarEmail("thomas.bellaver@gmail.com", anexoEmail);
+
+                //var teste = new JavaScriptSerializer().Deserialize<dynamic>(json);
+
             }
             catch (Exception ex)
             {

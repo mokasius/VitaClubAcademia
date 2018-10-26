@@ -100,12 +100,16 @@ namespace VitaClubAcademia.Services
 
         #endregion
 
-        /*
+        
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "EnviarEmailPagamento", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void EnviarEmailPagamento(Stream json);
-        */
+        void EnviarEmailPagamento(string json);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "EnviarEmailPagamento2")]
+        void EnviarEmailPagamento2(Stream json);
+
 
     }
 

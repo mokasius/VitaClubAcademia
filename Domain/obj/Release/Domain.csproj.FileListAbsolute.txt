@@ -22,3 +22,4 @@ C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migra
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.TabelaPagamento.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.CriacaoClasse_FrequenciaHidro.resources
 C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.NovaPropAluno_HorarioHidro.resources
+C:\Users\thoma\Desktop\Projetos\VitaClubAcademia\Domain\obj\Release\Domain.Migrations.PropAluno_e_Pagamento.resources
