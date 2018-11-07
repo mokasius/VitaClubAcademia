@@ -1,4 +1,5 @@
 ﻿using Business.Classes;
+using Domain.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,15 @@ namespace Business.WebServiceModels
         public virtual int AlunoId { get; set; }
         public DateTime Data { get; set; }
         public bool Selecionado { get; set; }
+
+        public FrequenciaHidroModel() { }
+
+        public FrequenciaHidroModel(FrequenciaHidroDO freq)
+        {
+            this.AlunoId = freq.AlunoId;
+            this.Data = freq.Data;
+            this.Selecionado = freq.Selecionado == 1;
+        }
 
         public FrequenciaHidro ConvertToDTO()
         {

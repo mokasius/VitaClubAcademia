@@ -66,7 +66,7 @@ namespace Business.Classes
             {
                 using (var db = new VitaClubContext())
                 {
-                    var query = db.Pagamentos.Where(a => a.AlunoId == alunoId).Take(3).OrderByDescending(a => a.Ano).ThenByDescending(a => a.Mes);
+                    var query = db.Pagamentos.Where(a => a.AlunoId == alunoId).OrderByDescending(a => a.Ano).ThenByDescending(a => a.Mes).Take(3);
                     foreach (var item in query)
                     {
                         retorno.Add(new Pagamento(item));

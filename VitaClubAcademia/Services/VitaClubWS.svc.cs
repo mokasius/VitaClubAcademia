@@ -392,7 +392,7 @@ namespace VitaClubAcademia.Services
                 bool _presentes = Convert.ToBoolean(presentes);
                 var frequencias = FrequenciaHidro.CarregarFrequencias(_presentes);
 
-                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<FrequenciaHidro>));
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<FrequenciaHidroModel>));
                 return ConverteObjetoParaStream(ser, frequencias);
             }
             catch (Exception ex)
