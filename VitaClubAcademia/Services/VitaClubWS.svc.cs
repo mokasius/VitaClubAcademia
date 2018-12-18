@@ -401,6 +401,22 @@ namespace VitaClubAcademia.Services
             }
         }
 
+        public Stream GetPagamentos()
+        {
+            try
+            {
+                var retorno = new object();
+
+                Pagamento.GetPagamentos();
+
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(object));
+                return ConverteObjetoParaStream(ser, retorno);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
         #endregion
 

@@ -14,6 +14,7 @@ namespace VitaClubAcademia
         {
             if (!IsPostBack)
             {
+                Pagamento.GetPagamentos();
                 //Aluno.Teste();
             }
         }

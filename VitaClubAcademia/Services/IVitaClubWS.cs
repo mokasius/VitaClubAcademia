@@ -86,6 +86,10 @@ namespace VitaClubAcademia.Services
         [WebInvoke(Method = "GET", UriTemplate = "CarregarUltimosPgtosAluno/{codigo}", ResponseFormat = WebMessageFormat.Json)]
         Stream CarregarUltimosPgtosAluno(string codigo);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "GetPagamentos", ResponseFormat = WebMessageFormat.Json)]
+        Stream GetPagamentos();
+
         #endregion
 
         #region Metodos Hidro

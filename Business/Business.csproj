@@ -75,6 +75,7 @@
     <Compile Include="EFManager.cs" />
     <Compile Include="Enumeradores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Uteis\Uteis.cs" />
     <Compile Include="WebServiceModels\AlunoModel.cs" />
     <Compile Include="WebServiceModels\DivisaoTreinoModel.cs" />
     <Compile Include="WebServiceModels\ExercicioModel.cs" />
